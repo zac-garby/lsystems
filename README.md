@@ -42,4 +42,4 @@ these steps:
     # angle = 20
     ```
 
- 4. If you remove these hashes, and add hashes to the currently active one (by default, cow parsley, on line 110), the program will now use that system instead.
+ 4. If you remove these hashes (except for the name on the first line, "fern"), and add hashes to the currently active one (by default, cow parsley, on line 110), the program will now use that system instead.
