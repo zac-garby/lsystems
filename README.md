@@ -9,58 +9,39 @@ It runs user-defined L-systems using Python's `turtle` module, and also can
 simulate graphical effects such as random angles and segment lengths, and
 tropism (where the plant points towards the "sun").
 
+---
+
+Also, hugo thanks to [Alex](https://github.com/theSecondBlueWizard) for checking
+over the code, making sure it runs on macOS ("it works on my machine" and all that), and writing the code for selecting L-systems upon running the code!
+
+If you have any trouble at all setting this up, feel free to email me, contact me via [the details on my website](https://zacgarby.co.uk), or simply raise an issue on this repository and I'll help you out.
+
 ## Quickly getting started
 
 If you just want to see pretty pictures, follow these steps:
 
  1. [Install Python](https://www.python.org/downloads/) if you haven't already.
  2. Download this repository (either via [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or just [downloading it directly as a ZIP](https://github.com/zac-garby/lsystems/archive/refs/heads/master.zip)).
- 3. Run the Python script `lsystem.py`.
+ 3. Install the Tkinter graphics library if if you don't have it.
+      - Windows: Should be installed with python. If not, run 'pip install tk' in comand prompt.
+      - MacOS: Easiest to do by running 'brew install python-tk' if you have [homebrew](https://brew.sh/).
+      - Linux: Package name differs between 'tk', 'python3-tkinter', 'python-tk' among others, depending on your distribution.
+ 4. Run the Python script `lsystem.py`.
     - Through the command line, this is `python3 lsystem.py`.
     - You might be able to just double click the file - I'm not sure.
- 4. That's it! I'd recommend full-screening the window, then press ENTER a few
+    - You'll be asked for which system to see, type the name of the given system and press enter.
+ 5. That's it! I'd recommend full-screening the window, then press ENTER a few
     times to advance the simulation.
     - You can go into "slow mode" by pressing DOWN (and back to fast by pressing
       UP) if you want to show the image as it is being drawn.
-
-## Using a different L-system
-
-If you want to use an L-system other than the default cow parsley system, follow
-these steps:
-
- 1. [Install Python](https://www.python.org/downloads/) if you haven't already.
- 2. Download this repository (either via [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or just [downloading it directly as a ZIP](https://github.com/zac-garby/lsystems/archive/refs/heads/master.zip)).
- 3. Open `lsystem.py` in your editor of choice and scroll down to line 86. You can see that there are lots of systems currently commented out (i.e. prefixed with hashes) which makes Python ignore them. For example:
-
-    ```python
-    # fern
-    # rules = {
-    #     "X": "Y+[[X]-X]-Y[-YX]+X",
-    #     "Y": "YY"
-    # }
-    # axiom = "X"
-    # angle = 20
-    ```
-
- 4. If you remove these hashes (except for the name on the first line, "fern"), and add hashes to the currently active one (by default, cow parsley, on line 110), the program will now use that system instead.
 
 ## Making your own L-system
 
 If you want to make your own L-system, follow these steps:
 
  1. Download the Python script as described previously.
- 2. Open `lsystem.py` in your editor of choice and scroll down to line 86. Again, there are lots of L-systems defined and commented out currently. Comment out any which are not already (i.e. add hashes before each line).
- 3. Copy the following code beneath the last L-system definition (line 159):
-
-    ```python
-    rules = {
-        "X": "Y+[[X]-X]-Y[-YX]+X",
-        "Y": "YY"
-    }
-    axiom = "X"
-    angle = 20
-    ```
- 4. Edit the rules to your liking!
+ 2. Open `lsystem.py` in your editor of choice and scroll down to line 92. There are lots of L-systems defined here, the custom default of which is currently a copy of "cow parsley", between lines 171 and 198.
+ 3. Edit the rules to your liking!
     - The rules are defined as a Python dictionary in `rules`.
     - The turning angle is defined as a float in `angle`.
     - The initial/seed sequence is defined in `axiom`.
@@ -81,7 +62,3 @@ I've implemented a few things here which can make your drawings look more realis
  - `line_length`: the mean segment length (default 10).
  - `start_pos`: the position on the screen to start at, as a tuple. The screen opens as an 800x800 window, and `(0, 0)` is the center (default `(0, -380)`).
  - `sub_chance`: the probability that each rule substitution will take place. Default 1.0. Reducing this can lead to some cool effects.
-
-## Getting help
-
-If you have any trouble at all setting this up, feel free to email me or simply raise an issue on this repository and I'll help you out.
