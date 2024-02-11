@@ -17,8 +17,8 @@ If you just want to see pretty pictures, follow these steps:
  2. Download this repository (either via [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or just [downloading it directly as a ZIP](https://github.com/zac-garby/lsystems/archive/refs/heads/master.zip)).
  3. Install the TkInter graphics library if if you don't have it.
       - Windows: Should be installed with python. If not, run 'pip install tk' in comand prompt.
-      - MacOS: easiest to do by running 'brew install python-tk' if you have homebrew.
-      - Linux: package name differs between 'tk', 'python3-tkinter', 'python-tk' among others, depending on your distribution.
+      - MacOS: Easiest to do by running 'brew install python-tk' if you have [homebrew](https://brew.sh/).
+      - Linux: Package name differs between 'tk', 'python3-tkinter', 'python-tk' among others, depending on your distribution.
  4. Run the Python script `lsystem.py`.
     - Through the command line, this is `python3 lsystem.py`.
     - You might be able to just double click the file - I'm not sure.
@@ -33,7 +33,7 @@ If you just want to see pretty pictures, follow these steps:
 If you want to make your own L-system, follow these steps:
 
  1. Download the Python script as described previously.
- 2. Open `lsystem.py` in your editor of choice and scroll down to line 92. There are lots of L-systems defined here, the custom default of which is currently a copy of "fern", between lines 171 and 198.
+ 2. Open `lsystem.py` in your editor of choice and scroll down to line 92. There are lots of L-systems defined here, the custom default of which is currently a copy of "cow parsley", between lines 171 and 198.
  3. Edit the rules to your liking!
     - The rules are defined as a Python dictionary in `rules`.
     - The turning angle is defined as a float in `angle`.

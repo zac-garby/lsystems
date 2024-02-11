@@ -98,7 +98,7 @@ if pickedSystem in ["1", "fern"]:
     angle = 20
 
 # binary tree
-elif pickedSystem in ["2", "biary", "tree", "binary tree"]:
+elif pickedSystem in ["2", "binary", "tree", "binary tree"]:
     rules = {
         "X": "XX",
         "Y": "X[-Y][+Y]"
@@ -179,7 +179,7 @@ else:
         "X": "XX",
         "Y": "YZ",
         "Z": "[++++L]X[----L]X",
-        
+
         # leaves
         "L": "MM[+++L][---L]L",
         "M": "MMM"
@@ -197,7 +197,7 @@ else:
 
 ### the actual code   ├-------------------------------------------------------------------------
 
-print()    
+print()
 
 symbols = axiom
 
