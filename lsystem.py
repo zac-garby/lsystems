@@ -83,82 +83,122 @@ def run(lindenmayer, symbols, dist, angle):
         tropism_delta = hd - tropism_angle
         lindenmayer.right(tropism_delta * tropism_amount)
 
+
+print("Available L-systems:")
+for tree in ["1) Fern", "2) Binary Tree", "3) Cow Parsley (default)", "4) Hilbert Curve", "5) George bush"]:
+    print("  ↳", tree)
+pickedSystem = input("\nWhich of the above? > ").lower
+
 # fern
-# rules = {
-#     "X": "Y+[[X]-X]-Y[-YX]+X",
-#     "Y": "YY"
-# }
-# axiom = "X"
-# angle = 20
+if pickedSystem == "fern" or pickedSystem == "1":
+    rules = {
+        "X": "Y+[[X]-X]-Y[-YX]+X",
+        "Y": "YY"
+    }
+    axiom = "X"
+    angle = 20
 
 # binary tree
-# rules = {
-#     "X": "XX",
-#     "Y": "X[-Y][+Y]"
-# }
-# axiom = "Y"
-# angle = 30
-# line_length = 30
-# default_pen_size = 5
+elif pickedSystem == "binary" or pickedSystem == "binary tree" or pickedSystem == "2":
+    rules = {
+        "X": "XX",
+        "Y": "X[-Y][+Y]"
+    }
+    axiom = "Y"
+    angle = 30
+    line_length = 30
+    default_pen_size = 5
 
-# tropism_angle = 60
-# tropism_amount = 0.05
-# angle_random_variation = 0.05
-# length_random_variation = 3
+    tropism_angle = 60
+    tropism_amount = 0.05
+    angle_random_variation = 0.05
+    length_random_variation = 3
 
 # cow parsley
-rules = {
-    # base growth and flowers
-    "F": "XY[++G][--G][G]",
-    "G": "XX[++G][--G][G]",
+elif pickedSystem == "cow parsley" or pickedSystem == "cow" or "parsley" or pickedSystem == "3":
+    rules = {
+        # base growth and flowers
+        "F": "XY[++G][--G][G]",
+        "G": "XX[++G][--G][G]",
 
-    # leave shoot timing
-    "X": "XX",
-    "Y": "YZ",
-    "Z": "[++++L]X[----L]X",
+        # leave shoot timing
+        "X": "XX",
+        "Y": "YZ",
+        "Z": "[++++L]X[----L]X",
 
-    # leaves
-    "L": "MM[+++L][---L]L",
-    "M": "MMM"
-}
-axiom = "F"
-angle = 20
-line_length = 2
-tropism_angle = 70
-tropism_amount = 0.01
-angle_random_variation = 0.07
-default_pen_size = 2
-length_random_variation = 2
-bud_symbols = "FG"
-start_pos = (-100, -380)
+        # leaves
+        "L": "MM[+++L][---L]L",
+        "M": "MMM"
+    }
+    axiom = "F"
+    angle = 20
+    line_length = 2
+    tropism_angle = 70
+    tropism_amount = 0.01
+    angle_random_variation = 0.07
+    default_pen_size = 2
+    length_random_variation = 2
+    bud_symbols = "FG"
+    start_pos = (-100, -380)
 
 # hilbert curve
-# rules = {
-#     "a": "+bX-aXa-Xb+",
-#     "b": "-aX+bXb+Xa-"
-# }
-# axiom = "a"
-# angle = 90
-# start_pos = (-350, -350)
-# default_pen_size = 2
-# line_length = 11
+elif pickedSystem == "hilbert curve" or pickedSystem == "hilbert" or pickedSystem == "curve" or pickedSystem == "4":
+    rules = {
+        "a": "+bX-aXa-Xb+",
+        "b": "-aX+bXb+Xa-"
+    }
+    axiom = "a"
+    angle = 90
+    start_pos = (-350, -350)
+    default_pen_size = 2
+    line_length = 11
 
 # George bush
-# rules = {
-#     "X": "XX+[+X-X-X]-[-X+X+X]"
-# }
-# axiom = "X"
-# angle = 20
-# angle_random_variation = 0.07
-# default_pen_size = 1
-# line_length = 8
-# length_random_variation = 4
-# tropism_angle = 120
-# tropism_amount = 0.005
+elif pickedSystem == "george bush" or pickedSystem == "george" or pickedSystem =="bush" or pickedSystem == "5":
+    rules = {
+        "X": "XX+[+X-X-X]-[-X+X+X]"
+    }
+    axiom = "X"
+    angle = 20
+    angle_random_variation = 0.07
+    default_pen_size = 1
+    line_length = 8
+    length_random_variation = 4
+    tropism_angle = 120
+    tropism_amount = 0.005
 
 
+### Default, feel free to customise to make your own :) ├-------------------------------------
+else:
+    rules = {
+        # base growth and flowers
+        "F": "XY[++G][--G][G]",
+        "G": "XX[++G][--G][G]",
 
-# the actual code
+        # leave shoot timing
+        "X": "XX",
+        "Y": "YZ",
+        "Z": "[++++L]X[----L]X",
+        
+        # leaves
+        "L": "MM[+++L][---L]L",
+        "M": "MMM"
+    }
+    axiom = "F"
+    angle = 20
+    line_length = 2
+    tropism_angle = 70
+    tropism_amount = 0.01
+    angle_random_variation = 0.07
+    default_pen_size = 2
+    length_random_variation = 2
+    bud_symbols = "FG"
+    start_pos = (-100, -380)
+
+# the actual code   ├-------------------------------------------------------------------------
+
+print()    
+
 symbols = axiom
 
 win = turtle.Screen()
