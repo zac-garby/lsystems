@@ -87,10 +87,9 @@ def run(lindenmayer, symbols, dist, angle):
 print("Available L-systems:")
 for tree in ["1) Fern", "2) Binary Tree", "3) Cow Parsley (default)", "4) Hilbert Curve", "5) George bush"]:
     print("  ↳", tree)
-pickedSystem = input("\nWhich of the above? > ").lower
-
+pickedSystem = input("\nWhich of the above? > ").lower()
 # fern
-if pickedSystem == "fern" or pickedSystem == "1":
+if pickedSystem in ["1", "fern"]:
     rules = {
         "X": "Y+[[X]-X]-Y[-YX]+X",
         "Y": "YY"
@@ -99,7 +98,7 @@ if pickedSystem == "fern" or pickedSystem == "1":
     angle = 20
 
 # binary tree
-elif pickedSystem == "binary" or pickedSystem == "binary tree" or pickedSystem == "2":
+elif pickedSystem in ["2", "biary", "tree", "binary tree"]:
     rules = {
         "X": "XX",
         "Y": "X[-Y][+Y]"
@@ -115,7 +114,7 @@ elif pickedSystem == "binary" or pickedSystem == "binary tree" or pickedSystem =
     length_random_variation = 3
 
 # cow parsley
-elif pickedSystem == "cow parsley" or pickedSystem == "cow" or "parsley" or pickedSystem == "3":
+elif pickedSystem in ["3", "cow parsley", "cow", "parsley"]:
     rules = {
         # base growth and flowers
         "F": "XY[++G][--G][G]",
@@ -142,7 +141,7 @@ elif pickedSystem == "cow parsley" or pickedSystem == "cow" or "parsley" or pick
     start_pos = (-100, -380)
 
 # hilbert curve
-elif pickedSystem == "hilbert curve" or pickedSystem == "hilbert" or pickedSystem == "curve" or pickedSystem == "4":
+elif pickedSystem in ["4", "hilbert curve", "hilbert", "curve"]:
     rules = {
         "a": "+bX-aXa-Xb+",
         "b": "-aX+bXb+Xa-"
@@ -154,7 +153,7 @@ elif pickedSystem == "hilbert curve" or pickedSystem == "hilbert" or pickedSyste
     line_length = 11
 
 # George bush
-elif pickedSystem == "george bush" or pickedSystem == "george" or pickedSystem =="bush" or pickedSystem == "5":
+elif pickedSystem in ["5", "george bush", "george", "bush"]:
     rules = {
         "X": "XX+[+X-X-X]-[-X+X+X]"
     }
@@ -170,6 +169,7 @@ elif pickedSystem == "george bush" or pickedSystem == "george" or pickedSystem =
 
 ### Default, feel free to customise to make your own :) ├-------------------------------------
 else:
+    print("running default")
     rules = {
         # base growth and flowers
         "F": "XY[++G][--G][G]",
@@ -195,7 +195,7 @@ else:
     bud_symbols = "FG"
     start_pos = (-100, -380)
 
-# the actual code   ├-------------------------------------------------------------------------
+### the actual code   ├-------------------------------------------------------------------------
 
 print()    
 
