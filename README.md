@@ -12,7 +12,8 @@ tropism (where the plant points towards the "sun").
 ---
 
 Also, huge thanks to [Alex](https://github.com/theSecondBlueWizard) for checking
-over the code, making sure it runs on macOS ("it works on my machine" and all that), and writing the code for selecting L-systems upon running the code!
+over the code, making sure it runs on *his* macOS ("it works on my machine" and all that),
+writing the "installing Tkinter" instructions in this document, *and* writing the code for selecting L-systems upon running the code!
 
 If you have any trouble at all setting this up, feel free to email me, contact me via [the details on my website](https://zacgarby.co.uk), or simply raise an issue on this repository and I'll help you out.
 
