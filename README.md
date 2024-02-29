@@ -1,7 +1,6 @@
 # L-Systems
 
-Hello! This is the code for my (at the time of writing this unreleased)
-Computerphile video.
+Hello! This is the code for my Computerphile video, https://youtu.be/puwhf-404Xc.
 
 ![](screenshot.png)
 
